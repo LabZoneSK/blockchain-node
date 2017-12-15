@@ -56,7 +56,7 @@ app.get('/nodes/resolve', (req, res) => {
   const replaced = blockchain.resolveConflicts();
 
   let response = {};
-  if (replaced === true) {
+  if (replaced) {
     response = {
       'message': 'Our chain was replaced',
       'new_chain': blockchain.chain
@@ -102,4 +102,4 @@ app.post('/nodes/register/all', (req, res) => {
   res.send(JSON.stringify(response));
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.listen(3001, () => console.log('Example app listening on port 3000!'))
